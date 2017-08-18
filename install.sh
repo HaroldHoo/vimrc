@@ -1,9 +1,9 @@
 #!/bin/bash
 ##############################################
 # filename: install.sh
-# author: huyaolong
-# mail: huyaolong@yongche.com
-# date: 2017-08-02
+# author: Harold
+# mail: mail@yaolong.me
+# date: 2017-08-18
 ##############################################
 
 printf "\033[33mCloning Vundle...\033[0m\n"
