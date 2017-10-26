@@ -70,6 +70,30 @@ if !has('nvim')
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+" (Optional) Multi-entry selection UI.
+Plug 'Shougo/denite.nvim'
+" (Optional) Completion integration with deoplete.
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" (Optional) Completion integration with nvim-completion-manager.
+Plug 'roxma/nvim-completion-manager'
+" (Optional) Showing function signature and inline doc.
+Plug 'Shougo/echodoc.vim'
+
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+autocmd FileType php LanguageClientStart
+
+" requires phpactor
+Plug 'phpactor/phpactor' ,  {'do': 'composer install'}
+Plug 'roxma/ncm-phpactor'
+
+Plug 'othree/csscomplete.vim'
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
 call plug#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""
