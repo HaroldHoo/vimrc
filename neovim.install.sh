@@ -19,7 +19,7 @@ printf "\n"
 read -r -p "Press [y] to install plugins for vim. Or [n] to run [vim +PluginInstall] by yourself. [Y/n] " input
 case $input in
     [yY][eE][sS]|[yY])
-        vim +PlugInstall
+        nvim +PlugInstall
         ;;
 
     [nN][oO]|[nN])
@@ -27,6 +27,6 @@ case $input in
         ;;
 
     *)
-        vim +PlugInstall
+        nvim +PlugInstall
         ;;
 esac
