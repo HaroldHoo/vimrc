@@ -3,6 +3,7 @@ set encoding=utf-8
 
 let mapleader = "\<Space>"
 syntax on
+set noincsearch
 set nowrap
 set nu
 set numberwidth=5
@@ -111,6 +112,8 @@ Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/sy
 call plug#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "NERDTree
 """""""""""""""""""""""""""""""""""""""
