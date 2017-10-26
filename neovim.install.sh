@@ -13,13 +13,14 @@ mkdir -p ~/.config/nvim/colors && curl -sSL 'https://raw.githubusercontent.com/t
 printf "\033[33mDownloading .vimrc...\033[0m\n"
 curl -sSL 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.init.vim' -o ~/.config/nvim/init.vim
 
-pip3 install neovim
+sudo pip3 install --upgrade neovim
+sudo pip3 install --upgrade typing
 
 printf "\n"
 read -r -p "Press [y] to install plugins for vim. Or [n] to run [vim +PluginInstall] by yourself. [Y/n] " input
 case $input in
     [yY][eE][sS]|[yY])
-        nvim +PlugInstall
+	nvim +PlugInstall +UpdateRemotePlugins +qa
         ;;
 
     [nN][oO]|[nN])
@@ -27,6 +28,6 @@ case $input in
         ;;
 
     *)
-        nvim +PlugInstall
+	nvim +PlugInstall +UpdateRemotePlugins +qa
         ;;
 esac

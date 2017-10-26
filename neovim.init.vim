@@ -70,6 +70,7 @@ if !has('nvim')
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+""""""""""""""""" LanguageClient-neovim
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
@@ -81,6 +82,19 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-completion-manager'
 " (Optional) Showing function signature and inline doc.
 Plug 'Shougo/echodoc.vim'
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+""""""""""""""""" LanguageClient-neovim
 
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 autocmd FileType php LanguageClientStart
