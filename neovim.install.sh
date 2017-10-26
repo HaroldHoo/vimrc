@@ -3,7 +3,7 @@
 # filename: install.sh
 # author: Harold
 # mail: mail@yaolong.me
-# date: 2017-10-26
+# date: 2017-10-27
 ##############################################
 
 type php >/dev/null 2>&1 || (echo "command not found: php"; exit 1;)
