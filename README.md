@@ -6,6 +6,14 @@
    2. Via wget:
    > bash -c "$(wget 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/install.sh' -O -)"
 
+## How to get neo-init.vim
+* **linux/mac:**
+   1. Via curl:
+   > bash -c "$(curl -fsSL 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh')"
+
+   2. Via wget:
+   > bash -c "$(wget 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh' -O -)"
+
 ## Some Hot-Key
 ### **窗口**
 |热键|说明|默认|
