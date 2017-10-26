@@ -96,7 +96,7 @@ nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 """"""""""""""""" LanguageClient-neovim
 
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer require felixfbecker/language-server && composer install && composer run-script parse-stubs'}
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer require felixfbecker/language-server && composer install && composer run-script parse-stubs && cd ~/.config/nvim/plugged/LanguageServer-php-neovim && composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs'}
 autocmd FileType php LanguageClientStart
 
 " requires phpactor
