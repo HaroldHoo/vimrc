@@ -8,15 +8,15 @@
 
 type php >/dev/null 2>&1 || (echo "command not found: php"; exit 1;)
 
-if [ -z $(php -v | grep 'PHP 7') ]; then
+if [ -z "$(php -v | grep 'PHP 7')" ]; then
 	echo "php version can not < 7"; exit 1;
 fi
 
-if [ -z $(php -m | grep xml) ]; then
+if [ -z "$(php -m | grep xml)" ]; then
 	echo "please install php-ext xml"; exit 1;
 fi
 
-if [ -z $(php -m | grep zip) ]; then
+if [ -z "$(php -m | grep zip)" ]; then
 	echo "please install php-ext zip"; exit 1;
 fi
 
