@@ -93,8 +93,8 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 """"""""""""""""" LanguageClient-neovim
 
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer require felixfbecker/language-server && composer install && composer run-script parse-stubs && cd ~/.config/nvim/plugged/LanguageServer-php-neovim && composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs'}
