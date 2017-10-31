@@ -38,9 +38,9 @@ read -r -p "Press [y] to install plugins for vim. Or [n] to run [vim +PluginInst
 case $input in
     [yY][eE][sS]|[yY])
         nvim +PlugInstall +UpdateRemotePlugins +qa && \
-        cd ~/.config/nvim/plugged/LanguageServer-php-neovim && \
-	composer require felixfbecker/language-server && \
-	composer install && composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
+            cd ~/.config/nvim/plugged/LanguageServer-php-neovim && \
+            composer require felixfbecker/language-server && \
+            composer install && composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
         ;;
 
     [nN][oO]|[nN])
@@ -49,9 +49,9 @@ case $input in
 
     *)
         nvim +PlugInstall +UpdateRemotePlugins +qa && \
-        cd ~/.config/nvim/plugged/LanguageServer-php-neovim && \
-	composer require felixfbecker/language-server && \
-	composer install && composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
+            cd ~/.config/nvim/plugged/LanguageServer-php-neovim && \
+            composer require felixfbecker/language-server && \
+            composer install && composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
         ;;
 esac
 
