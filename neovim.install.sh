@@ -8,6 +8,8 @@
 
 type php >/dev/null 2>&1 || (echo "command not found: php"; exit 1;)
 type composer >/dev/null 2>&1 || (echo "command not found: composer"; exit 1;)
+type python3 >/dev/null 2>&1 || (echo "command not found: python3"; exit 1;)
+type pip3 >/dev/null 2>&1 || (echo "command not found: pip"; exit 1;)
 
 if [ -z "$(php -v | grep 'PHP 7')" ]; then
     echo "php version can not < 7"; exit 1;
