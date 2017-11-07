@@ -42,7 +42,7 @@ nmap    w,  :vertical resize -3<CR>
 nmap    w.  :vertical resize +3<CR>
 nmap    <leader>v :set paste!<CR>
 
-map <C-d> :shell <CR>
+nmap <C-d> :tabe %<CR> :te<CR>
 nmap <C-w>t :let b:tmplinenum=line(".")<CR> :let b:tmpcolnum=col(".")<CR> :tabe %<CR> :cal cursor(b:tmplinenum, b:tmpcolnum)<CR>
 
 set nocp "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
@@ -117,7 +117,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "NERDTree
 """""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vim/bundle/nerdtree/plugin/NERD_tree.vim"))
+if filereadable(expand("~/.config/nvim/plugged/nerdtree/plugin/NERD_tree.vim"))
     "show hidden files
     let NERDTreeShowHidden=1
     "open a NERDTree automatically when vim starts up
@@ -136,11 +136,11 @@ endif
 
 "tagbar
 """""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vim/bundle/tagbar/plugin/tagbar.vim"))
+if filereadable(expand("~/.config/nvim/plugged/tagbar/plugin/tagbar.vim"))
     " autocmd vimenter * Tagbar
     map <C-m> :TagbarToggle<CR>
 endif
-if filereadable(expand("~/.vim/bundle/tagbar-phpctags.vim/plugin/tagbar-phpctags.vim"))
+if filereadable(expand("~/.config/nvim/plugged/tagbar-phpctags.vim/plugin/tagbar-phpctags.vim"))
     if filereadable(expand("/export/note/local/bin/phpctags"))
         let g:tagbar_phpctags_bin='/export/note/local/bin/phpctags'
         let g:tagbar_phpctags_memory_limit = '256M'
@@ -168,7 +168,7 @@ endif
 """""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim"))
+if filereadable(expand("~/.config/nvim/plugged/nerdcommenter/plugin/NERD_commenter.vim"))
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1
     " Use compact syntax for prettified multi-line comments
@@ -188,7 +188,7 @@ endif
 """""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vim/bundle/vim-airline-themes/plugin/airline-themes.vim"))
+if filereadable(expand("~/.config/nvim/plugged/vim-airline-themes/plugin/airline-themes.vim"))
     let g:airline_powerline_fonts = 1
     let g:airline_theme='molokai'
     " let g:airline_extensions = ['tabline', 'branch']
