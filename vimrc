@@ -77,6 +77,7 @@ filetype plugin indent on
 if filereadable(expand("~/.vim/bundle/nerdtree/plugin/NERD_tree.vim"))
     "show hidden files
     let NERDTreeShowHidden=1
+    let g:NERDTreeWinSize=20
     "open a NERDTree automatically when vim starts up
     autocmd vimenter * NERDTree | wincmd p
     let g:nerdtree_tabs_open_on_console_startup=1

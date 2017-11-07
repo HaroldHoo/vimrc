@@ -42,7 +42,7 @@ nmap    w,  :vertical resize -3<CR>
 nmap    w.  :vertical resize +3<CR>
 nmap    <leader>v :set paste!<CR>
 
-nmap <C-d> :tabe %<CR> :te<CR>
+nmap <C-d> :tabe %<CR> :NERDTreeToggle<CR> :te<CR>
 nmap <C-w>t :let b:tmplinenum=line(".")<CR> :let b:tmpcolnum=col(".")<CR> :tabe %<CR> :cal cursor(b:tmplinenum, b:tmpcolnum)<CR>
 
 set nocp "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
@@ -120,6 +120,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 if filereadable(expand("~/.config/nvim/plugged/nerdtree/plugin/NERD_tree.vim"))
     "show hidden files
     let NERDTreeShowHidden=1
+    let g:NERDTreeWinSize=20
     "open a NERDTree automatically when vim starts up
     autocmd vimenter * NERDTree | wincmd p
     let g:nerdtree_tabs_open_on_console_startup=1
