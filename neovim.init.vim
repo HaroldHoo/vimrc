@@ -21,15 +21,16 @@ colorscheme molokai
 " colorscheme desert
 " colorscheme elflord
 " set mouse=a
-set list listchars=tab:»·,trail:·
+set showbreak=↪\ 
+set list listchars=tab:»·,nbsp:␣,trail:·,extends:⟩,precedes:⟨
 
 " Highlight current line
 set cursorline nocursorcolumn
 
-"set cscopequickfix=s-,c-,d-,i-,t-,e-
-"if filereadable("./cscope.out")
-"    cs a ./cscope.out
-"endif
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+if filereadable("./cscope.out")
+    cs a ./cscope.out
+endif
 
 if filereadable("./tags")
     set tags+=./tags
@@ -107,6 +108,7 @@ Plug 'roxma/ncm-phpactor'
 Plug 'othree/csscomplete.vim'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
+autocmd FileType go set noexpandtab list listchars=tab:\ \ ,nbsp:␣,trail:·,extends:⟩,precedes:⟨
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 call plug#end()
