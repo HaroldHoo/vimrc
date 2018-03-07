@@ -53,7 +53,8 @@ case $input in
         nvim +PlugInstall +UpdateRemotePlugins +qa && \
             cd ~/.config/nvim/plugged/LanguageServer-php-neovim && \
             composer require felixfbecker/language-server && \
-            composer install && composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
+            composer install;\
+            composer run-script parse-stubs --working-dir=vendor/felixfbecker/language-server
         ;;
 esac
 
