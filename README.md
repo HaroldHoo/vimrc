@@ -1,5 +1,5 @@
 # Config of Vim and Neo-Vim
-![vimrc](https://raw.githubusercontent.com/HaroldHoo/vimrc/master/nvim.jpg)
+![vimrc](https://raw.githubusercontent.com/HaroldHoo/vimrc/master/nvim.png)
 
 ## How to get vimrc
 * **linux/mac:**
