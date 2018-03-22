@@ -1,3 +1,6 @@
+# Config of Vim and Neo-Vim
+![vimrc](https://raw.githubusercontent.com/HaroldHoo/vimrc/master/nvim.jpg)
+
 ## How to get vimrc
 * **linux/mac:**
    1. Via curl:
