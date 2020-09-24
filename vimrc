@@ -55,7 +55,7 @@ call vundle#begin()
 "
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -67,6 +67,9 @@ Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+" Plugin 'joker1007/vim-markdown-quote-syntax'
 "
 call vundle#end()
 filetype plugin indent on
@@ -222,8 +225,8 @@ func GetTemplates()
         call setline(1,				"\#!/bin/bash")
         call append(line("."), 		"\##############################################")
         call append(line(".")+1, 	"\# filename: ".expand("%"))
-        call append(line(".")+2, 	"\# author: huyaolong")
-        call append(line(".")+3, 	"\# mail: huyaolong@yongche.com")
+        call append(line(".")+2, 	"\# author: yaolong")
+        call append(line(".")+3, 	"\# mail: mail@yaolong.net")
         call append(line(".")+4, 	"\# date: ".strftime("%Y-%m-%d"))
         call append(line(".")+5, 	"\##############################################")
         call append(line(".")+6, 	"")
@@ -232,28 +235,19 @@ func GetTemplates()
         call setline(1,				"/**")
         call append(line("."), 		" * Copyright ". strftime("%Y") ." harold. All rights reserved.")
         call append(line(".")+1, 	" * Filename: ".expand("%"))
-        call append(line(".")+2, 	" * Author: harold")
-        call append(line(".")+3, 	" * Mail: mail@yaolong.me")
+        call append(line(".")+2, 	" * Author: yaolong")
+        call append(line(".")+3, 	" * Mail: mail@yaolong.net")
         call append(line(".")+4, 	" * Date: ".strftime("%Y-%m-%d"))
         call append(line(".")+5, 	" */")
         call append(line(".")+6, 	"")
         call append(line(".")+7, 	"package ")
     endif
-    " if &filetype == 'go'
-    "     call setline(1,				"// Copyright ". strftime("%Y") ." harold. All rights reserved.")
-    "     call append(line("."), 		"// Filename: ".expand("%"))
-    "     call append(line(".")+1, 	"// Author: harold")
-    "     call append(line(".")+2, 	"// Mail: mail@yaolong.me")
-    "     call append(line(".")+3, 	"// Date: ".strftime("%Y-%m-%d"))
-    "     call append(line(".")+4, 	"")
-    "     call append(line(".")+5, 	"package ")
-    " endif
     if &filetype == 'php'
         call setline(1,				"<?php")
         call append(line("."), 		"/**")
         call append(line(".")+1, 	" * @filename: ".expand("%"))
         call append(line(".")+2, 	" * @description:")
-        call append(line(".")+3, 	" * @author: huyaolong@yongche.com")
+        call append(line(".")+3, 	" * @author: mail@yaolong.net")
         call append(line(".")+4, 	" * @date: ".strftime("%Y-%m-%d"))
         call append(line(".")+5, 	" */")
         call append(line(".")+6, 	"")
