@@ -69,7 +69,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-" Plugin 'joker1007/vim-markdown-quote-syntax'
 "
 call vundle#end()
 filetype plugin indent on
