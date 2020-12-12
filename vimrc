@@ -74,6 +74,11 @@ call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""
 
+"MarkDown
+"""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled = 1
+"""""""""""""""""""""""""""""""""""""""
+
 "NERDTree
 """""""""""""""""""""""""""""""""""""""
 if filereadable(expand("~/.vim/bundle/nerdtree/plugin/NERD_tree.vim"))
