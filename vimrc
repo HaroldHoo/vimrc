@@ -15,7 +15,7 @@ set backspace=2
 set t_Co=256
 set background=dark
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" mkdir -p ~/.vim/colors && curl -sSL 'https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim' -o ~/.vim/colors/molokai.vim
+" mkdir -p ~/.vim/colors && curl -sSL 'https://raw.fastgit.org/tomasr/molokai/master/colors/molokai.vim' -o ~/.vim/colors/molokai.vim
 colorscheme molokai
 " colorscheme desert
 " colorscheme elflord
