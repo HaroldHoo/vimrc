@@ -26,11 +26,11 @@ if [ -z "$(php -m | grep zip)" ]; then
 fi
 
 printf "\033[33mGet Plug...\033[0m\n"
-mkdir -p ~/.config/nvim/autoload && wget https://raw.fastgit.org/junegunn/vim-plug/master/plug.vim -O ~/.config/nvim/autoload/plug.vim
+mkdir -p ~/.config/nvim/autoload && wget https://raw.gitmirror.com/junegunn/vim-plug/master/plug.vim -O ~/.config/nvim/autoload/plug.vim
 printf "\033[33mDownloading color molokai...\033[0m\n"
-mkdir -p ~/.config/nvim/colors && curl -sSL 'https://raw.fastgit.org/tomasr/molokai/master/colors/molokai.vim' -o ~/.config/nvim/colors/molokai.vim
+mkdir -p ~/.config/nvim/colors && curl -ksSL 'https://raw.gitmirror.com/tomasr/molokai/master/colors/molokai.vim' -o ~/.config/nvim/colors/molokai.vim
 printf "\033[33mDownloading .vimrc...\033[0m\n"
-curl -sSL 'https://raw.fastgit.org/HaroldHoo/vimrc/master/neovim.init.vim' -o ~/.config/nvim/init.vim
+curl -ksSL 'https://raw.gitmirror.com/HaroldHoo/vimrc/master/neovim.init.vim' -o ~/.config/nvim/init.vim
 
 sudo pip3 install --upgrade neovim
 sudo pip3 install --upgrade typing
