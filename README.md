@@ -4,18 +4,18 @@
 ## How to get vimrc
 * **linux/mac:**
    1. Via curl:
-   > bash -c "$(curl -kfsSL 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/install.sh')"
+   > bash -c "$(curl -kfsSL 'https://gh-proxy.com/https://raw.githubusercontent.com/HaroldHoo/vimrc/master/install.sh')"
 
    2. Via wget:
-   > bash -c "$(wget 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/install.sh' -O -)"
+   > bash -c "$(wget 'https://gh-proxy.com/https://raw.githubusercontent.com/HaroldHoo/vimrc/master/install.sh' -O -)"
 
 ## How to get neo-init.vim
 * **linux/mac:**
    1. Via curl:
-   > bash -c "$(curl -kfsSL 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh')"
+   > bash -c "$(curl -kfsSL 'https://gh-proxy.com/https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh')"
 
    2. Via wget:
-   > bash -c "$(wget 'https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh' -O -)"
+   > bash -c "$(wget 'https://gh-proxy.com/https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh' -O -)"
 
 ## Some Hot-Key
 ### **窗口**
