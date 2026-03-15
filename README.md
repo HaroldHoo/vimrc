@@ -17,6 +17,14 @@
    2. Via wget:
    > bash -c "$(wget 'https://gh-proxy.com/https://raw.githubusercontent.com/HaroldHoo/vimrc/master/neovim.install.sh' -O -)"
 
+## Install PowerLine Fonts
+
+```sh
+git clone https://gh-proxy.com/https://github.com/powerline/fonts.git /tmp/powerline-fonts --depth=1 && /tmp/powerline-fonts/install.sh
+```
+
+see: https://github.com/powerline/fonts
+
 ## Some Hot-Key
 ### **窗口**
 |热键|说明|默认|
@@ -47,4 +55,5 @@
 |`<Space>` c l|注释行|
 |`<Space>` c u|取消注释行|
 |`<Space>+v`|切换 paste 状态|
+
 
