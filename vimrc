@@ -82,22 +82,56 @@ let g:vim_markdown_folding_disabled = 1
 "NERDTree
 """""""""""""""""""""""""""""""""""""""
 if filereadable(expand("~/.vim/bundle/nerdtree/plugin/NERD_tree.vim"))
-    "show hidden files
+    " 1. 禁用可能冲突的插件自带功能 (针对 nerdtree-tabs 等插件)
+    let g:nerdtree_tabs_autoclose = 0
+
+    " 2. 基础设置
     let NERDTreeShowHidden=1
     let g:NERDTreeWinSize=20
-    "open a NERDTree automatically when vim starts up
-    autocmd vimenter * NERDTree | wincmd p
     let g:nerdtree_tabs_open_on_console_startup=1
-    "let g:nerdtree_tabs_autofind=1
-    "map a specific key or shortcut to open NERDTree
     map <C-n> :NERDTreeToggle<CR>
-    "open NERDTree automatically when vim starts up on opening a directory
+
+    " 3. 启动逻辑
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-    "close vim if the only window left open is a NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd vimenter * if !exists("s:std_in") | NERDTree | wincmd p | endif
+
+    " 4. 关键修复：使用异步方式关闭最后一个 NERDTree 窗口
+    " 我们改用 WinEnter 和 BufEnter 双重保险，并使用 timer_start 绕过布局锁定
+    autocmd BufEnter,WinEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | call timer_start(0, {-> s:CloseIfLast()}) | endif
+
+    function! s:CloseIfLast()
+        if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
+            q
+        endif
+    endfunction
 endif
 """""""""""""""""""""""""""""""""""""""
+"重新同步宽度：当 Tab 关闭后强制恢复 NERDTree 宽度
+autocmd TabClosed * call timer_start(10, {-> s:ForceResize()})
+
+function! s:ForceResize()
+    " 1. 记录当前所在的窗口编号
+    let l:original_win = winnr()
+
+    " 2. 查找当前 Tab 中是否存在 NERDTree
+    let l:nt_winnr = -1
+    for i in range(1, winnr('$'))
+        " 检查缓冲区变量或文件类型
+        if getbufvar(winbufnr(i), '&filetype') =~# 'nerdtree'
+            let l:nt_winnr = i
+            break
+        endif
+    endfor
+
+    " 3. 如果找到了 NERDTree 窗口，执行调整
+    if l:nt_winnr != -1
+        " 跳转到该窗口 -> 调整宽度 -> 跳回原窗口
+        execute l:nt_winnr . 'wincmd w'
+        execute 'vertical resize ' . g:NERDTreeWinSize
+        execute l:original_win . 'wincmd w'
+    endif
+endfunction
 
 "tagbar
 """""""""""""""""""""""""""""""""""""""
